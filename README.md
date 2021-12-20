@@ -42,7 +42,7 @@ and `docker run` command.
 
 Finally, this is how the server should look like:
 
-![](/visitor-docker-node/blob/main/visitor-app.png)
+![](https://github.com/rimmi21/visitor-docker-node/blob/main/visitor-app.png)
 
 With the help of **docker-compose** we can have multiple containers running at the same time. Let's say we'd like to launch **docker-compose** in the background. We should use the following command:
 
@@ -53,3 +53,7 @@ Now, if we'd like to stop all the running containers, individually extracting th
 So, we can stop all of them together at a time, using the below command:
 
 `docker-compose down`
+
+To check the status of running containers inside our docker-compose.yml file, we must type the below command inside the directory our docker-compose.yml file is located in.
+
+`docker-compose ps`
