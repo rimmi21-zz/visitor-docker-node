@@ -1,2 +1,36 @@
 # visitor-docker-node
-This application helps us track the number of visitors for the particular website. We use redis as a database here, and docker as our image.
+
+In this mini project, we create a node app, that counts the number of times, one would visit the site.
+
+At first, we create a `package.json` file and include the very 2 packages we would be using. The express and the redis servers.
+
+Then, we create the `index.js` file and require the 2 servers (redis & express). We write some code to count the number of visitors for the site, and make our port `8081` listen to the server.
+
+Once, we do this, we create a new `Dockerfile` and create the node image. But, we are using the redis server too! So, how do we run it?
+
+We open a new terminal, and run the below command:
+
+`docker run redis`
+
+Docker downloads redis and keeps running it on the terminal. We create another terminal, and keep the redis server initiated. In this new terminal, we build our docker file, using the command:
+
+`docker build .`
+
+And then, we tag it with our **username/app-name:latest**.
+
+`docker build -t sohinipattanayak/visitor-app:latest .`
+
+Now, we are not done yet. We need to create a communication between the two containers, the redis server container and the node server container. To do that, we'll use **docker compose**
+
+We'll create a **docker-compose.yml** file where we do the following:
+
+- Include the containers that we want (redis-server and node-server)
+- create `redis-server` (create using the redis-image)
+- create `node-server` (create using the dockerfile in the current repository)
+- MAP port 8081 to 8081
+
+You can look at the **docker-compose.yml** for more details.
+
+Now, we run a couple of docker-compose commands:
+
+- `docker-compose up`
