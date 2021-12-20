@@ -43,3 +43,13 @@ and `docker run` command.
 Finally, this is how the server should look like:
 
 ![](/visitor-docker-node/blob/main/visitor-app.png)
+
+With the help of **docker-compose** we can have multiple containers running at the same time. Let's say we'd like to launch **docker-compose** in the background. We should use the following command:
+
+`docker-compose up -d`
+
+Now, if we'd like to stop all the running containers, individually extracting their id's and then stopping them would be a pain!
+
+So, we can stop all of them together at a time, using the below command:
+
+`docker-compose down`
