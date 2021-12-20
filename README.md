@@ -34,3 +34,8 @@ You can look at the **docker-compose.yml** for more details.
 Now, we run a couple of docker-compose commands:
 
 - `docker-compose up`
+
+Now let's say, you are making changes to the index.js file and you want them to be updated, to reflect on the site, you can try this command below, as it's a combination of the `docker build .`
+and `docker run` command.
+
+- `docker-compose up --build`
