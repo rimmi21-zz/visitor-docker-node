@@ -39,3 +39,7 @@ Now let's say, you are making changes to the index.js file and you want them to 
 and `docker run` command.
 
 - `docker-compose up --build`
+
+Finally, this is how the server should look like:
+
+![](/visitor-docker-node/blob/main/visitor-app.png)
